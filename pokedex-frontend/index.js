@@ -39,9 +39,10 @@ function createPokemonCard(pokemon) {
     pokemonCard.id = `${pokemon.type}`
     pokePhoto.src = `${pokemon.photo}`
     pokeID.textContent = `Pokemon ID: ${pokemon.pokemon_id}`
-    pokeName.innerHTML = `<a href="/pokemon.html?pokeID=${pokemon.id}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>`
+    pokeName.innerHTML = `<a href="/pokemon.html?pokemon_id=${pokemon.pokemon_id}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>`
     pokeType.textContent = `${pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)}`
 
     pokedex.append(pokemonCard)
     pokemonCard.append(pokePhoto, pokeID, pokeName, pokeType)
 }
+

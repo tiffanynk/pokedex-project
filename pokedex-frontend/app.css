@@ -44,6 +44,10 @@ a:hover {
     text-transform: uppercase;
 }
 
+a:visited {
+    color: powderblue;
+}
+
 #grass {
     background-color: #85C881;
 }
