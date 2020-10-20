@@ -2,6 +2,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: white;
+}
+
 h1 {
     text-align: center;
 }
@@ -32,6 +36,75 @@ div {
     border-radius: 10px;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-transform: uppercase;
+}
+
 #grass {
-    background-color: green;
+    background-color: #85C881;
+}
+
+#bug {
+    background-color: #4b8b48;
+}
+
+#fire {
+    background-color :#d10d0d;
+}
+
+#water {
+    background-color: #4979CC;
+}
+
+#ice {
+    background-color: #BEDAF3;
+}
+
+#electric {
+    background-color: yellow;
+}
+
+#psychic {
+    background-color: rebeccapurple;
+}
+
+#fairy {
+    background-color: pink;
+}
+
+#ghost {
+    background-color: purple;
+}
+
+#ground {
+    background-color: #573726d5;
+}
+
+#poison {
+    background-color: #00000090;
+    color: whitesmoke;
+}
+
+#fairy {
+    background-color: #FECDF4;
+}
+
+#normal {
+    background-color: #E8E8E8;
+}
+
+#dragon {
+    background-color: #FFD500;
+}
+
+#fighting {
+    background-color: #E86C2C;
+}
+
+#rock {
+    background-color: #AD5E35;
 }
