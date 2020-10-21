@@ -1,8 +1,10 @@
+/* ALL */
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #555555;
 }
 
+/* WRAPS BODY */
 .content-wrapper {
     display: block;
     margin: auto;
@@ -10,10 +12,12 @@
     max-width: 1700px;
 }
 
+/* BODY */
 body {
     background-color: white;
 }
 
+/* PAGE TITLE */
 h1 {
     text-align: center;
 }
@@ -25,56 +29,48 @@ h1 {
     align-content: space-between;
 }
 
-div {
-    margin: 20px;
-    padding: 20px;
-}
-
-.pokemon-card {
-    padding: 5px;
+/* flip card container  */
+.flip-card {
+    height: 300px;
     width: 200px;
-    height: 275px;
-    margin: 30px;
-    box-shadow: 3px 3px 5px 6px #ccc;
-    text-align: center;
-    justify-content: center;
-    border-radius: 10px;
-    opacity: 0.75;;
+    border-radius: 30px;
+    perspective: 1000px;
 }
 
-.pokemon-card:hover {
-    opacity: 1;
-}
-
-.pokemon-image {
+/*  position the front and back side */
+.flip-card-inner {
     position: relative;
-    top: 50px;
-}
-
-.poke-id {
-    position: relative;
-    top: -110px;
-    left: 0px;
     width: 100%;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    color: #555555;
-    justify-content: left;
+    height: 100%;
+    text-align: center;
+    transition: 1s;
+    transform-style: preserve-3d;
 }
 
-.pokemon-type {
-    width: fit-content;
-    padding: 5px;
-    background-color: white;
-    border-radius: 10px;
-    position: relative;
-    left: 75px;
-    font-size: small;
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
 }
 
-a {
-    text-decoration: none;
-    color: #555555;
+.front-pokemon-card, .back-pokemon-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front-pokemon-card {
+    z-index: 2;
+    transform: rotateY(0);
+}
+
+.back-pokemon-card {
+    transform: rotateY(180deg)
+}
+
+.front-image {
+    align-content: center;
 }
 
 #grass {

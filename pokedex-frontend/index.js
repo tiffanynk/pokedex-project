@@ -10,11 +10,12 @@ const fetchPokemon = () => {
     Promise.all(promises)
     .then(allPokemon => {
         const firstGenPokemon = allPokemon.map(pokemon => ({
-            photo: pokemon.sprites['front_default'],
+            frontImage: pokemon.sprites['front_default'],
             pokemon_id: pokemon.id,
             name: pokemon.name,
             type: pokemon.types[0].type.name,
             abilities: pokemon.abilities.map(ability => ability.ability.name).join(', '),
+            backImage: pokemon.sprites['back_default'],
         }))
         createPokemonCards(firstGenPokemon)
     })
@@ -29,27 +30,55 @@ function createPokemonCards(pokemons) {
 }
 
 function createPokemonCard(pokemon) {
-    const pokemonCard = document.createElement('div')
-    pokemonCard.classList.add('pokemon-card')
-    pokemonCard.id = `${pokemon.type}`
+    // total card
+    const flipCard = document.createElement("div")
+    flipCard.classList.add("flip-card")
+    flipCard.id = `${pokemon.type}`
+    pokedex.append(flipCard)
 
-    const pokePhoto = document.createElement('img')
-    pokePhoto.src = `${pokemon.photo}`
-    pokePhoto.classList.add("pokemon-image")
+    // front & back container
+    const flipCardInner = document.createElement("div")
+    flipCardInner.classList.add("flip-card-inner")
+    flipCard.append(flipCardInner)
 
-    const pokeName = document.createElement('h2')
-    pokeName.innerHTML = `<a href="/pokemon.html?pokemon_id=${pokemon.pokemon_id}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>`
+    // front of card
+    const frontCard = document.createElement("div")
+    frontCard.classList.add('front-pokemon-card')
 
-    const pokeID = document.createElement('p')
-    pokeID.textContent = `#${pokemon.pokemon_id}`
-    pokeID.classList.add("poke-id")
+    const frontImage = document.createElement('img')
+    frontImage.src = `${pokemon.frontImage}`
+    frontImage.classList.add("front-pokemon-image")
+
+    const frontPokeName = document.createElement('h2')
+    frontPokeName.innerHTML = `<a href="/pokemon.html?pokemon_id=${pokemon.pokemon_id}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>`
+
+    const frontPokeID = document.createElement('p')
+    frontPokeID.textContent = `#${pokemon.pokemon_id}`
+    frontPokeID.classList.add("front-poke-id")
     
-    const pokeType = document.createElement('p')
-    pokeType.textContent = `${pokemon.type.toUpperCase()}`
-    pokeType.classList.add("pokemon-type")
+    const frontPokeType = document.createElement('p')
+    frontPokeType.textContent = `${pokemon.type.toUpperCase()}`
+    frontPokeType.classList.add("front-pokemon-type")
 
+    frontCard.append(frontImage, frontPokeID, frontPokeName, frontPokeType)
 
-    pokedex.append(pokemonCard)
-    pokemonCard.append(pokePhoto, pokeID, pokeName, pokeType)
+    // back of card
+    const backCard = document.createElement("div")
+    backCard.classList.add('back-pokemon-card')
+
+    const backImage = document.createElement('img')
+    backImage.src = `${pokemon.backImage}`
+    backImage.classList.add("back-pokemon-image")
+
+    const backPokeName = document.createElement('h2')
+    backPokeName.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`
+
+    const backPokeAbilities = document.createElement("p")
+    backPokeAbilities.textContent = `Abilities: ${pokemon.abilities}`
+    backPokeAbilities.classList.add("back-poke-abilities")
+
+    backCard.append(backImage, backPokeName, backPokeAbilities)
+
+    // append
+    flipCardInner.append(frontCard, backCard)
 }
-
