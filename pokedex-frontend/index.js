@@ -33,12 +33,12 @@ function createPokemonCard(pokemon) {
     // total card
     const flipCard = document.createElement("div")
     flipCard.classList.add("flip-card")
-    flipCard.id = `${pokemon.type}`
     pokedex.append(flipCard)
-
+    
     // front & back container
     const flipCardInner = document.createElement("div")
     flipCardInner.classList.add("flip-card-inner")
+    flipCardInner.id = `${pokemon.type}`
     flipCard.append(flipCardInner)
 
     // front of card
@@ -70,14 +70,19 @@ function createPokemonCard(pokemon) {
     backImage.src = `${pokemon.backImage}`
     backImage.classList.add("back-pokemon-image")
 
+    const backPokeID = document.createElement('p')
+    backPokeID.textContent = `#${pokemon.pokemon_id}`
+    backPokeID.classList.add("back-poke-id")
+
     const backPokeName = document.createElement('h2')
-    backPokeName.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`
+    backPokeName.innerHTML = `<a href="/pokemon.html?pokemon_id=${pokemon.pokemon_id}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>`
+    backPokeName.classList.add("back-pokemon-name")
 
     const backPokeAbilities = document.createElement("p")
     backPokeAbilities.textContent = `Abilities: ${pokemon.abilities}`
-    backPokeAbilities.classList.add("back-poke-abilities")
+    backPokeAbilities.classList.add("back-pokemon-abilities")
 
-    backCard.append(backImage, backPokeName, backPokeAbilities)
+    backCard.append(backImage, backPokeID, backPokeName, backPokeAbilities)
 
     // append
     flipCardInner.append(frontCard, backCard)
