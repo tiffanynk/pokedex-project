@@ -1,4 +1,7 @@
 const pokedex = document.getElementById('pokedex')
+//SEARCH FORM SELECTOR SEE LINES 16-18 IN HTML
+const pokemonSearchForm = document.querySelector('#pokemon-search-form')
+
 const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 150; i++) {
@@ -18,6 +21,18 @@ const fetchPokemon = () => {
             backImage: pokemon.sprites['back_default'],
         }))
         createPokemonCards(firstGenPokemon)
+        //THIS IS FOR THE SEACH FORM
+        pokemonSearchForm.addEventListener('input', (event) => {
+            const pokemonCard = document.createElement('div')
+            const filteredPokemon = firstGenPokemon.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
+            const filteredPokeHTML = createPokemonCards(filteredPokemon)
+            console.log(filteredPokemon)
+            //USING CONSOLE LOG TO MAKE SURE WE'RE GETTING THE RIGHT POKEMON
+            pokemonCard.innerHTML = filteredPokeHTML ? filteredPokeHTML : "Uh oh! There aren't Pokémon here!"
+            //THIS TERNARY STATES IF FILTERDPOKEHTML MATCHES A POKEMON (IS TRUE), IT SHOULD RETURN A NEW POKE CARD. 
+            //IF FALSE RETURN ERROR MSG
+            pokedex.append(pokemonCard)
+          })
     })
 }
 
