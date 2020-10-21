@@ -23,6 +23,10 @@ h1 {
     font-size: 50px;
 }
 
+/* SEARCH BAR*/
+#pokemon-search-form {
+    text-align: center;
+}
 a {
     text-decoration: none;
 }
