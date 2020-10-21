@@ -1,5 +1,13 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #555555;
+}
+
+.content-wrapper {
+    display: block;
+    margin: auto;
+    max-height: 1700px;
+    max-width: 1700px;
 }
 
 body {
@@ -10,12 +18,6 @@ h1 {
     text-align: center;
 }
 
-.content-wrapper {
-    display: block;
-    margin: auto;
-    max-height: 1700px;
-    max-width: 1700px;
-}
 
 #pokedex {
     display: flex;
@@ -33,25 +35,46 @@ div {
     width: 200px;
     height: 275px;
     margin: 30px;
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-    -moz-box-shadow: 3px 3px 5px 6px #ccc;
     box-shadow: 3px 3px 5px 6px #ccc;
     text-align: center;
     justify-content: center;
-    background-color: rgba(128, 22, 22, 0.886);
     border-radius: 10px;
+    opacity: 0.75;;
+}
+
+.pokemon-card:hover {
+    opacity: 1;
+}
+
+.pokemon-image {
+    position: relative;
+    top: 50px;
+}
+
+.poke-id {
+    position: relative;
+    top: -110px;
+    left: 0px;
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: #555555;
+    justify-content: left;
+}
+
+.pokemon-type {
+    width: fit-content;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    left: 75px;
+    font-size: small;
 }
 
 a {
     text-decoration: none;
-}
-
-a:hover {
-    text-transform: uppercase;
-}
-
-a:visited {
-    color: powderblue;
+    color: #555555;
 }
 
 #grass {
@@ -89,7 +112,6 @@ a:visited {
 
 #ghost {
     background-color: #7b62a3;
-    color: #fff;
 }
 
 #ground {
@@ -98,7 +120,6 @@ a:visited {
 
 #poison {
     background-color: #b97fc9;
-    color: whitesmoke;
 }
 
 #fairy {

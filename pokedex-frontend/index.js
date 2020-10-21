@@ -30,17 +30,24 @@ function createPokemonCards(pokemons) {
 
 function createPokemonCard(pokemon) {
     const pokemonCard = document.createElement('div')
-    const pokePhoto = document.createElement('img')
-    const pokeName = document.createElement('h2')
-    const pokeID = document.createElement('p')
-    const pokeType = document.createElement('p')
-
     pokemonCard.classList.add('pokemon-card')
     pokemonCard.id = `${pokemon.type}`
+
+    const pokePhoto = document.createElement('img')
     pokePhoto.src = `${pokemon.photo}`
-    pokeID.textContent = `Pokemon ID: ${pokemon.pokemon_id}`
+    pokePhoto.classList.add("pokemon-image")
+
+    const pokeName = document.createElement('h2')
     pokeName.innerHTML = `<a href="/pokemon.html?pokemon_id=${pokemon.pokemon_id}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>`
-    pokeType.textContent = `${pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)}`
+
+    const pokeID = document.createElement('p')
+    pokeID.textContent = `#${pokemon.pokemon_id}`
+    pokeID.classList.add("poke-id")
+    
+    const pokeType = document.createElement('p')
+    pokeType.textContent = `${pokemon.type.toUpperCase()}`
+    pokeType.classList.add("pokemon-type")
+
 
     pokedex.append(pokemonCard)
     pokemonCard.append(pokePhoto, pokeID, pokeName, pokeType)
