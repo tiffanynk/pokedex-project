@@ -15,6 +15,10 @@ function displayPokemon(pokemon) {
     largePokemonCard.classList.add("large-pokemon-card")
     largePokemonCard.id = `${pokemon.types[0].type.name}`
 
+    const pokemonId = document.createElement("p")
+    pokemonId.textContent = `${pokemon.id}`
+    pokemonId.classList.add("pokemon-id")
+
     const pokemonName = document.createElement('h1');
     pokemonName.classList.add('poke-name')
     pokemonName.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`
@@ -30,5 +34,17 @@ function displayPokemon(pokemon) {
     pokemonAbility.textContent = `Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(", ")}`
 
     pokeDiv.append(largePokemonCard)
-    largePokemonCard.append(pokemonName, pokemonPhoto, pokemonType, pokemonAbility);
+    largePokemonCard.append(pokemonId, pokemonName, pokemonPhoto, pokemonType, pokemonAbility);
     }
+
+    // const pokemonSpeciesUrl = "https://pokeapi.co/api/v2/pokemon-species"
+    // fetch(`${pokemonSpeciesUrl}/1`)
+    //     .then(response => response.json())
+    //     .then(pokemonDetails => {
+    //         displayDetails(pokemonDetails)
+    //     })
+    
+    // function displayDetails(pokemonDetails) {
+    //     const pokemonDescription = pokemonDetails.flavor_text_entries[0].flavor_text
+    //     console.log(pokemonDescription)
+    // }
