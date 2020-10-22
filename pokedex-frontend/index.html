@@ -13,8 +13,14 @@
                 <h1>Pokédex</h1>
             </header>
             <main>
+                <form id="pokemon-type-filter">
+                    <select name="type" class="type-filter">
+                        <option value="">Please Choose a Type</option>
+                    </select>
+                    <input type="submit" value="Filter by Type"/>
+                </form>
                 <form id="pokemon-search-form" class="" action="" method="GET">
-                    <input id="pokemon-search-input" type="text" name="" placeholder="Enter Pokémon Name">
+                    <input id="pokemon-search-input" type="text" name="" placeholder="Enter Pokémon Name"/>
                 </form>
                 <section id="pokedex">
                 </section>
