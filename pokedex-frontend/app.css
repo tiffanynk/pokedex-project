@@ -27,12 +27,13 @@ h1 {
 #pokemon-search-form {
     text-align: center;
 }
+
 a {
     text-decoration: none;
 }
 
 a:hover {
-    color:black
+    color:black;
 }
 
 #pokedex {
