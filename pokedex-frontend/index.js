@@ -1,7 +1,13 @@
+const pokeTypeURL = 'https://pokeapi.co/api/v2/type/'
+const pokeQueryParams = new URLSearchParams(window.location.search)
+const typeParams = new URLSearchParams(window.location.search);
+const typeSearch = typeParams.get('type')
+
 const pokedex = document.getElementById('pokedex');
 const pokemonSearchForm = document.querySelector('#pokemon-search-form');
+const pokemonTypeSearch = document.querySelector('.type-filter')
+
 let pokemonArray = [];
-let pokemonDescriptionArray = [];
 
 const fetchPokemon = () => {
     const promises = [];
@@ -38,6 +44,19 @@ pokemonSearchForm.addEventListener('input', (event) => {
     createPokemonCards(filteredPokemon)
 })
 
+fetch(pokeTypeURL)
+    .then(response => response.json())
+    .then(pokeTypes => {
+        pokeTypes.results.forEach(type => {
+            const option = document.createElement('option')
+
+            option.textContent = type.name
+            option.value = type.name
+
+            pokemonTypeSearch.appendChild(option)
+        })
+    })
+
 function clearPokedex() {
     let section = document.querySelector('#pokedex')
 
@@ -51,16 +70,6 @@ function createPokemonCards(pokemons) {
         // fetchDescription(pokemon)
     })
 }
-
-// const fetchDescription = (pokemon) => {
-//     (fetch(pokemon.description))
-//         .then(response => response.json())
-//         .then(renderDescription)
-// }
-
-// function renderDescription(speciesInfo) {
-//     speciesInfo.flavor_text_entries[3].flavor_text
-// }
 
 function createPokemonCard(pokemon) {
     // total card
@@ -118,7 +127,7 @@ function createPokemonCard(pokemon) {
     backPokeName.classList.add("back-pokemon-name")
 
     const backPokeAbilities = document.createElement("p")
-    backPokeAbilities.textContent = `Abilities: ${pokemon.abilities}`
+    backPokeAbilities.innerHTML = `<p>Abilities:<br>${pokemon.abilities}<p>`
     backPokeAbilities.classList.add("back-pokemon-abilities")
 
     backCard.append(backImage, backPokeID, backPokeName, backPokeAbilities)

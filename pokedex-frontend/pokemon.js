@@ -40,9 +40,11 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             
             const pokemonType = document.createElement('p');
             pokemonType.textContent = `Type: ${pokemon.types[0].type.name}`
+            pokemonType.classList.add("pokemon-type")
             
             const pokemonAbility = document.createElement('p');
             pokemonAbility.textContent = `Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(", ")}`
+            pokemonAbility.classList.add("pokemon-abilities")
 
             pokeDiv.append(largePokemonCard)
             largePokemonCard.append(pokemonId, pokemonName, pokemonPhoto, pokemonType, pokemonAbility);

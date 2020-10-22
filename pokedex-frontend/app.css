@@ -28,6 +28,11 @@ h1 {
     text-align: center;
 }
 
+/*TYPE FILTER*/
+#pokemon-type-filter {
+    text-align: center;
+}
+
 a {
     text-decoration: none;
 }
@@ -36,17 +41,25 @@ a:hover {
     color:black;
 }
 
+.form-spacers{
+    height: 25px;
+}
+
+.type-filter{
+    margin: 10px;;
+}
+
 #pokedex {
     /* margin: 20px;
     padding: 20px; */
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /* flip card container  */
 .flip-card {
-    margin: 20px;
-    align-content: space-between;
+    margin: 35px;
     width: 200px;
     height: 275px;
     text-align: center;
