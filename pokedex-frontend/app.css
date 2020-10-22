@@ -28,6 +28,11 @@ h1 {
     text-align: center;
 }
 
+/*TYPE FILTER*/
+#pokemon-type-filter {
+    text-align: center;
+}
+
 a {
     text-decoration: none;
 }
