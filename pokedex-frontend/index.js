@@ -126,25 +126,3 @@ function createPokemonCard(pokemon) {
     // append
     flipCardInner.append(frontCard, backCard)
 }
-
-
-
-// const pokeQueryParams = new URLSearchParams(window.location.search)
-// const pokemon_id = pokeQueryParams.get("pokemon_id")
-
-// for (let i = 1; i <= 151; i++) {
-//     const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${i}`;
-//     fetch(pokemonSpeciesUrl)
-//         .then(response => response.json())
-//         .then(pokemonDetails => {
-//             displayDetails(pokemonDetails)
-//         })
-//     }
-
-
-// function displayDetails(allPokemonDetails) {
-     
-//     allPokemonDetails.map(detail => {
-//          pokeDescription: detail.flavor_text_entries[3].flavor_text
-//     })
-
