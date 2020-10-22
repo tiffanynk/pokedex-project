@@ -4,7 +4,7 @@ const pokemonSearchForm = document.querySelector('#pokemon-search-form')
 
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 150; i++) {
+    for (let i = 1; i <= 151; i++) {
         const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(pokemonURL)
             .then(response => response.json())
@@ -23,15 +23,8 @@ const fetchPokemon = () => {
         createPokemonCards(firstGenPokemon)
         //THIS IS FOR THE SEACH FORM
         pokemonSearchForm.addEventListener('input', (event) => {
-            const pokemonCard = document.createElement('div')
             const filteredPokemon = firstGenPokemon.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
-            const filteredPokeHTML = createPokemonCards(filteredPokemon)
-            console.log(filteredPokemon)
-            //USING CONSOLE LOG TO MAKE SURE WE'RE GETTING THE RIGHT POKEMON
-            pokemonCard.innerHTML = filteredPokeHTML ? filteredPokeHTML : "Uh oh! There aren't Pokémon here!"
-            //THIS TERNARY STATES IF FILTERDPOKEHTML MATCHES A POKEMON (IS TRUE), IT SHOULD RETURN A NEW POKE CARD. 
-            //IF FALSE RETURN ERROR MSG
-            pokedex.append(pokemonCard)
+            createPokemonCards(filteredPokemon)
           })
     })
 }
@@ -39,15 +32,35 @@ const fetchPokemon = () => {
 fetchPokemon()
 
 function createPokemonCards(pokemons) {
-    pokemons.forEach(pokemon => {
-        createPokemonCard(pokemon)
-    })
+
+    if (pokemons.length > 150) {
+        pokemons.forEach(pokemon => {
+            createPokemonCard(pokemon)
+        })
+    } else if (pokemons.length > 0) {
+        // how to remove divs inside a section
+        let pokemonCards = document.querySelectorAll('#flip-card-id')
+
+        pokemonCards.forEach(pokemonCard => {
+            pokemonCard.remove()
+        })
+
+        pokemons.forEach(pokemon => {
+            createPokemonCard(pokemon)
+        })
+    } else {
+        let pokemonCards = document.querySelectorAll('#flip-card-id')
+        pokemonCards.forEach(pokemonCard => {
+            pokemonCard.remove()
+        })
+    }
 }
 
 function createPokemonCard(pokemon) {
     // total card
     const flipCard = document.createElement("div")
     flipCard.classList.add("flip-card")
+    flipCard.id = 'flip-card-id'
     pokedex.append(flipCard)
     
     // front & back container
@@ -76,7 +89,7 @@ function createPokemonCard(pokemon) {
     frontPokeType.classList.add("front-pokemon-type")
 
     frontCard.append(frontImage, frontPokeID, frontPokeName, frontPokeType)
-
+    
     // back of card
     const backCard = document.createElement("div")
     backCard.classList.add('back-pokemon-card')
