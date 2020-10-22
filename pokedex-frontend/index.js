@@ -61,6 +61,8 @@ function createPokemonCards(pokemons) {
     })
 }
 
+<<<<<<< HEAD
+=======
 // const fetchDescription = (pokemon) => {
 //     (fetch(pokemon.description))
 //         .then(response => response.json())
@@ -74,6 +76,7 @@ function createPokemonCards(pokemons) {
 
 // }
 
+>>>>>>> 5f8264e790cfe4f9cd402b0045c4a955d1f8b854
 function createPokemonCard(pokemon) {
     // total card
     const flipCard = document.createElement("div")
@@ -128,7 +131,7 @@ function createPokemonCard(pokemon) {
     backPokeName.classList.add("back-pokemon-name")
 
     const backPokeAbilities = document.createElement("p")
-    backPokeAbilities.textContent = `Abilities: ${pokemon.abilities}`
+    backPokeAbilities.innerHTML = `<p>Abilities:<br>${pokemon.abilities}<p>`
     backPokeAbilities.classList.add("back-pokemon-abilities")
 
     backCard.append(backImage, backPokeID, backPokeName, backPokeAbilities)
@@ -138,6 +141,8 @@ function createPokemonCard(pokemon) {
 
     uniqueTypes.add(pokemon.type)
 }
+<<<<<<< HEAD
+=======
 
 function generateTypes() {
     uniqueTypes.forEach(type => {
@@ -168,3 +173,4 @@ function generateTypes() {
 //          pokeDescription: detail.flavor_text_entries[3].flavor_text
 //     })
 
+>>>>>>> 5f8264e790cfe4f9cd402b0045c4a955d1f8b854
