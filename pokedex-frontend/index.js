@@ -5,9 +5,10 @@ const typeSearch = typeParams.get('type')
 
 const pokedex = document.getElementById('pokedex');
 const pokemonSearchForm = document.querySelector('#pokemon-search-form');
-const pokemonTypeSearch = document.querySelector('.type-filter')
+const pokemonTypeFilter = document.querySelector('.type-filter')
 
 let pokemonArray = [];
+let uniqueTypes = new Set();
 
 const fetchPokemon = () => {
     const promises = [];
@@ -19,7 +20,6 @@ const fetchPokemon = () => {
     }
     Promise.all(promises)
     .then(allPokemon => {
-        console.log(allPokemon)
         const firstGenPokemon = allPokemon.map(pokemon => ({
             frontImage: pokemon.sprites['front_default'],
             pokemon_id: pokemon.id,
@@ -33,29 +33,16 @@ const fetchPokemon = () => {
         // console.log(firstGenPokemon)
         createPokemonCards(firstGenPokemon)
     })
+    .then(generateTypes)
 }
 
 fetchPokemon()
 
 pokemonSearchForm.addEventListener('input', (event) => {
     const filteredPokemon = pokemonArray.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
-    // console.log('input', pokemonArray)
     clearPokedex()
     createPokemonCards(filteredPokemon)
 })
-
-fetch(pokeTypeURL)
-    .then(response => response.json())
-    .then(pokeTypes => {
-        pokeTypes.results.forEach(type => {
-            const option = document.createElement('option')
-
-            option.textContent = type.name
-            option.value = type.name
-
-            pokemonTypeSearch.appendChild(option)
-        })
-    })
 
 function clearPokedex() {
     let section = document.querySelector('#pokedex')
@@ -64,18 +51,37 @@ function clearPokedex() {
 }
 
 function createPokemonCards(pokemons) {
-    // console.log(pokemons)
-    pokemons.forEach(pokemon => {
+    let currentPokemon = pokemons
+    if (typeSearch) {
+        currentPokemon = pokemons.filter(pokemon => pokemon.type.includes(typeSearch.toLowerCase()))
+    }
+    currentPokemon.forEach(pokemon => {
         createPokemonCard(pokemon)
         // fetchDescription(pokemon)
     })
 }
 
+<<<<<<< HEAD
+=======
+// const fetchDescription = (pokemon) => {
+//     (fetch(pokemon.description))
+//         .then(response => response.json())
+//         .then(renderDescription)
+// }
+
+// function renderDescription(speciesInfo) {
+//     speciesInfo.flavor_text_entries[3].flavor_text
+// }
+// function setTypes() {
+
+// }
+
+>>>>>>> 5f8264e790cfe4f9cd402b0045c4a955d1f8b854
 function createPokemonCard(pokemon) {
     // total card
     const flipCard = document.createElement("div")
     flipCard.classList.add("flip-card")
-    flipCard.id = 'flip-card-id'
+    flipCard.id = `${pokemon.name}`
     pokedex.append(flipCard)
     
     // front & back container
@@ -106,8 +112,6 @@ function createPokemonCard(pokemon) {
     frontPokeType.textContent = `${pokemon.type.toUpperCase()}`
     frontPokeType.classList.add("front-pokemon-type")
 
-    
-
     frontCard.append(frontImage, frontPokeID, frontPokeName, frontDescription, frontPokeType)
     
     // back of card
@@ -134,4 +138,39 @@ function createPokemonCard(pokemon) {
 
     // append
     flipCardInner.append(frontCard, backCard)
+
+    uniqueTypes.add(pokemon.type)
 }
+<<<<<<< HEAD
+=======
+
+function generateTypes() {
+    uniqueTypes.forEach(type => {
+        const typeOption = document.createElement('option');
+        typeOption.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+        typeOption.value = type;
+
+        pokemonTypeFilter.append(typeOption)
+    })
+}
+
+// const pokeQueryParams = new URLSearchParams(window.location.search)
+// const pokemon_id = pokeQueryParams.get("pokemon_id")
+
+// for (let i = 1; i <= 151; i++) {
+//     const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${i}`;
+//     fetch(pokemonSpeciesUrl)
+//         .then(response => response.json())
+//         .then(pokemonDetails => {
+//             displayDetails(pokemonDetails)
+//         })
+//     }
+
+
+// function displayDetails(allPokemonDetails) {
+     
+//     allPokemonDetails.map(detail => {
+//          pokeDescription: detail.flavor_text_entries[3].flavor_text
+//     })
+
+>>>>>>> 5f8264e790cfe4f9cd402b0045c4a955d1f8b854
