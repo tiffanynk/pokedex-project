@@ -5,9 +5,10 @@ const typeSearch = typeParams.get('type')
 
 const pokedex = document.getElementById('pokedex');
 const pokemonSearchForm = document.querySelector('#pokemon-search-form');
-const pokemonTypeSearch = document.querySelector('.type-filter')
+const pokemonTypeFilter = document.querySelector('.type-filter')
 
 let pokemonArray = [];
+let uniqueTypes = new Set();
 
 const fetchPokemon = () => {
     const promises = [];
@@ -19,7 +20,6 @@ const fetchPokemon = () => {
     }
     Promise.all(promises)
     .then(allPokemon => {
-        console.log(allPokemon)
         const firstGenPokemon = allPokemon.map(pokemon => ({
             frontImage: pokemon.sprites['front_default'],
             pokemon_id: pokemon.id,
@@ -33,29 +33,16 @@ const fetchPokemon = () => {
         // console.log(firstGenPokemon)
         createPokemonCards(firstGenPokemon)
     })
+    .then(generateTypes)
 }
 
 fetchPokemon()
 
 pokemonSearchForm.addEventListener('input', (event) => {
     const filteredPokemon = pokemonArray.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
-    // console.log('input', pokemonArray)
     clearPokedex()
     createPokemonCards(filteredPokemon)
 })
-
-fetch(pokeTypeURL)
-    .then(response => response.json())
-    .then(pokeTypes => {
-        pokeTypes.results.forEach(type => {
-            const option = document.createElement('option')
-
-            option.textContent = type.name
-            option.value = type.name
-
-            pokemonTypeSearch.appendChild(option)
-        })
-    })
 
 function clearPokedex() {
     let section = document.querySelector('#pokedex')
@@ -64,8 +51,11 @@ function clearPokedex() {
 }
 
 function createPokemonCards(pokemons) {
-    // console.log(pokemons)
-    pokemons.forEach(pokemon => {
+    let currentPokemon = pokemons
+    if (typeSearch) {
+        currentPokemon = pokemons.filter(pokemon => pokemon.type.includes(typeSearch.toLowerCase()))
+    }
+    currentPokemon.forEach(pokemon => {
         createPokemonCard(pokemon)
         // fetchDescription(pokemon)
     })
@@ -80,12 +70,15 @@ function createPokemonCards(pokemons) {
 // function renderDescription(speciesInfo) {
 //     speciesInfo.flavor_text_entries[3].flavor_text
 // }
+// function setTypes() {
+
+// }
 
 function createPokemonCard(pokemon) {
     // total card
     const flipCard = document.createElement("div")
     flipCard.classList.add("flip-card")
-    flipCard.id = 'flip-card-id'
+    flipCard.id = `${pokemon.name}`
     pokedex.append(flipCard)
     
     // front & back container
@@ -116,8 +109,6 @@ function createPokemonCard(pokemon) {
     frontPokeType.textContent = `${pokemon.type.toUpperCase()}`
     frontPokeType.classList.add("front-pokemon-type")
 
-    
-
     frontCard.append(frontImage, frontPokeID, frontPokeName, frontDescription, frontPokeType)
     
     // back of card
@@ -144,9 +135,19 @@ function createPokemonCard(pokemon) {
 
     // append
     flipCardInner.append(frontCard, backCard)
+
+    uniqueTypes.add(pokemon.type)
 }
 
+function generateTypes() {
+    uniqueTypes.forEach(type => {
+        const typeOption = document.createElement('option');
+        typeOption.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+        typeOption.value = type;
 
+        pokemonTypeFilter.append(typeOption)
+    })
+}
 
 // const pokeQueryParams = new URLSearchParams(window.location.search)
 // const pokemon_id = pokeQueryParams.get("pokemon_id")
