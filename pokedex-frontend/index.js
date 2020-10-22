@@ -1,17 +1,19 @@
 const pokedex = document.getElementById('pokedex');
 const pokemonSearchForm = document.querySelector('#pokemon-search-form');
 let pokemonArray = [];
+let pokemonDescriptionArray = [];
 
 const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 151; i++) {
         const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(pokemonURL)
+        promises.push(fetch(pokemonURL) 
             .then(response => response.json())
         )
     }
     Promise.all(promises)
     .then(allPokemon => {
+        console.log(allPokemon)
         const firstGenPokemon = allPokemon.map(pokemon => ({
             frontImage: pokemon.sprites['front_default'],
             pokemon_id: pokemon.id,
@@ -19,8 +21,10 @@ const fetchPokemon = () => {
             type: pokemon.types[0].type.name,
             abilities: pokemon.abilities.map(ability => ability.ability.name).join(', '),
             backImage: pokemon.sprites['back_default'],
+            description: pokemon.species.url
         }))
         pokemonArray = firstGenPokemon
+        // console.log(firstGenPokemon)
         createPokemonCards(firstGenPokemon)
     })
 }
@@ -29,7 +33,7 @@ fetchPokemon()
 
 pokemonSearchForm.addEventListener('input', (event) => {
     const filteredPokemon = pokemonArray.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
-    console.log('input', pokemonArray)
+    // console.log('input', pokemonArray)
     clearPokedex()
     createPokemonCards(filteredPokemon)
 })
@@ -41,11 +45,22 @@ function clearPokedex() {
 }
 
 function createPokemonCards(pokemons) {
-    console.log(pokemons)
+    // console.log(pokemons)
     pokemons.forEach(pokemon => {
         createPokemonCard(pokemon)
+        // fetchDescription(pokemon)
     })
 }
+
+// const fetchDescription = (pokemon) => {
+//     (fetch(pokemon.description))
+//         .then(response => response.json())
+//         .then(renderDescription)
+// }
+
+// function renderDescription(speciesInfo) {
+//     speciesInfo.flavor_text_entries[3].flavor_text
+// }
 
 function createPokemonCard(pokemon) {
     // total card
@@ -74,12 +89,17 @@ function createPokemonCard(pokemon) {
     const frontPokeID = document.createElement('p')
     frontPokeID.textContent = `#${pokemon.pokemon_id}`
     frontPokeID.classList.add("front-poke-id")
+
+    const frontDescription = document.createElement("p")
+    
     
     const frontPokeType = document.createElement('p')
     frontPokeType.textContent = `${pokemon.type.toUpperCase()}`
     frontPokeType.classList.add("front-pokemon-type")
 
-    frontCard.append(frontImage, frontPokeID, frontPokeName, frontPokeType)
+    
+
+    frontCard.append(frontImage, frontPokeID, frontPokeName, frontDescription, frontPokeType)
     
     // back of card
     const backCard = document.createElement("div")
@@ -108,20 +128,23 @@ function createPokemonCard(pokemon) {
 }
 
 
-const pokeQueryParams = new URLSearchParams(window.location.search)
-const pokemon_id = pokeQueryParams.get("pokemon_id")
 
-for (let i = 1; i <= 151; i++) {
-    const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${i}`;
-    fetch(pokemonSpeciesUrl)
-        .then(response => response.json())
-        .then(pokemonDetails => {
-            displayDetails(pokemonDetails)
-        })
-    }
+// const pokeQueryParams = new URLSearchParams(window.location.search)
+// const pokemon_id = pokeQueryParams.get("pokemon_id")
+
+// for (let i = 1; i <= 151; i++) {
+//     const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${i}`;
+//     fetch(pokemonSpeciesUrl)
+//         .then(response => response.json())
+//         .then(pokemonDetails => {
+//             displayDetails(pokemonDetails)
+//         })
+//     }
 
 
-function displayDetails(pokemonDetails) {
-     console.log(pokemonDetails.flavor_text_entries[0].flavor_text)
-}
+// function displayDetails(allPokemonDetails) {
+     
+//     allPokemonDetails.map(detail => {
+//          pokeDescription: detail.flavor_text_entries[3].flavor_text
+//     })
 
