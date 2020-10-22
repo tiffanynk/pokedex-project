@@ -1,7 +1,137 @@
-.pokename {
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #555555;
+}
+
+html { 
+    
+  }
+
+body {
+    background-color: white;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+#poke-info {
+    background-color: transparent;
+}
+
+#home-nav {
+    display: flex;
+    font-size: 30px;
+}
+
+#header-space {
+    height: 20px;
+}
+
+
+.large-pokemon-card {
+    display: inline-block;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.poke-name {
+    position: relative;
+    top: 30px;
     color: #555555;
 }
 
 .poke-image {
     height: 200px;
+}
+
+.pokemon-id {
+    position: relative;
+    top: 30px;
+    background-color: whitesmoke;
+    color: #555555;
+    justify-content: left;
+}
+
+#grass {
+    background-color: #9bcc50;
+}
+
+#bug {
+    background-color: #729f3f;
+}
+
+#fire {
+    background-color :#fd7d24;
+}
+
+#water {
+    background-color: #4592c4;
+}
+
+#ice {
+    background-color: #51c4e7;
+}
+
+#electric {
+    background-color: #eed535;
+}
+
+#psychic {
+    background-color:  #f366b9;
+}
+
+
+#fairy {
+    background-color: #fdb9e9;
+}
+
+#ghost {
+    background-color: #7b62a3;
+}
+
+#ground {
+    background-color: #f7de3f;
+}
+
+#poison {
+    background-color: #b97fc9;
+}
+
+#fairy {
+    background-color: #fdb9e9;
+}
+
+#normal {
+    background-color: #a4acaf;
+}
+
+#dragon {
+    background-color: goldenrod;
+}
+
+#fighting {
+    background-color: #d56723;
+}
+
+#rock {
+    background-color: #a38c21;
 }
