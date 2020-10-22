@@ -1,6 +1,6 @@
-const pokedex = document.getElementById('pokedex')
-//SEARCH FORM SELECTOR SEE LINES 16-18 IN HTML
-const pokemonSearchForm = document.querySelector('#pokemon-search-form')
+const pokedex = document.getElementById('pokedex');
+const pokemonSearchForm = document.querySelector('#pokemon-search-form');
+let pokemonArray = [];
 
 const fetchPokemon = () => {
     const promises = [];
@@ -20,40 +20,31 @@ const fetchPokemon = () => {
             abilities: pokemon.abilities.map(ability => ability.ability.name).join(', '),
             backImage: pokemon.sprites['back_default'],
         }))
+        pokemonArray = firstGenPokemon
         createPokemonCards(firstGenPokemon)
-        //THIS IS FOR THE SEACH FORM
-        pokemonSearchForm.addEventListener('input', (event) => {
-            const filteredPokemon = firstGenPokemon.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
-            createPokemonCards(filteredPokemon)
-          })
     })
 }
 
 fetchPokemon()
 
+pokemonSearchForm.addEventListener('input', (event) => {
+    const filteredPokemon = pokemonArray.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
+    console.log('input', pokemonArray)
+    clearPokedex()
+    createPokemonCards(filteredPokemon)
+})
+
+function clearPokedex() {
+    let section = document.querySelector('#pokedex')
+
+    section.innerHTML = ''
+}
+
 function createPokemonCards(pokemons) {
-
-    if (pokemons.length > 150) {
-        pokemons.forEach(pokemon => {
-            createPokemonCard(pokemon)
-        })
-    } else if (pokemons.length > 0) {
-        // how to remove divs inside a section
-        let pokemonCards = document.querySelectorAll('#flip-card-id')
-
-        pokemonCards.forEach(pokemonCard => {
-            pokemonCard.remove()
-        })
-
-        pokemons.forEach(pokemon => {
-            createPokemonCard(pokemon)
-        })
-    } else {
-        let pokemonCards = document.querySelectorAll('#flip-card-id')
-        pokemonCards.forEach(pokemonCard => {
-            pokemonCard.remove()
-        })
-    }
+    console.log(pokemons)
+    pokemons.forEach(pokemon => {
+        createPokemonCard(pokemon)
+    })
 }
 
 function createPokemonCard(pokemon) {
