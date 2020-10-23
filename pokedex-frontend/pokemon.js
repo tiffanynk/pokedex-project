@@ -27,7 +27,7 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             largePokemonCard.id = `${pokemon.types[0].type.name}`
 
             const pokemonId = document.createElement("p")
-            pokemonId.textContent = `${pokemon.id}`
+            pokemonId.textContent = `#${pokemon.id}`
             pokemonId.classList.add("pokemon-id")
 
             const pokemonName = document.createElement('h1');

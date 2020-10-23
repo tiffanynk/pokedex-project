@@ -51,14 +51,17 @@ a:hover {
 
 .poke-name {
     position: relative;
-    top: 30px;
+    top: 20px;
     color: #555555;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.769);
 }
 
 .poke-image {
     position: relative;
+    padding: 20px;
     bottom: 50px;
-    height: 250px;
+    height: 200px;
 }
 
 .pokemon-id {
@@ -66,26 +69,30 @@ a:hover {
     top: 30px;
     background-color: whitesmoke;
     color: #555555;
-    justify-content: left;
+    font-size: 24px;
 }
 
 .description {
     position: relative;
-    bottom: 175px;
+    bottom: 180px;
     font-size: 20px;
     margin-left: 30px;
     margin-right: 30px;
+    color: rgba(0, 0, 0, 0.769);
 }
 
 .pokemon-abilities {
     position: relative;
     top: 20px;
     color: black;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .pokemon-type {
     position: relative;
-    top: 20px;
+    top: 9px;
+    color: rgba(0, 0, 0, 0.769);
 }
 
 #grass {
