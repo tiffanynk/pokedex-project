@@ -30,7 +30,6 @@ const fetchPokemon = () => {
             description: pokemon.species.url
         }))
         pokemonArray = firstGenPokemon
-        // console.log(firstGenPokemon)
         createPokemonCards(firstGenPokemon)
     })
     .then(generateTypes)
@@ -56,8 +55,7 @@ function createPokemonCards(pokemons) {
         currentPokemon = pokemons.filter(pokemon => pokemon.type.includes(typeSearch.toLowerCase()))
     }
     currentPokemon.forEach(pokemon => {
-        createPokemonCard(pokemon)
-        // fetchDescription(pokemon)
+        createPokemonCard(pokemon)   
     })
 }
 

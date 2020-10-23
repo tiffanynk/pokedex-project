@@ -57,6 +57,4 @@ fetch(`${pokemonURL}/${pokemon_id}`)
         pokemonDescription.textContent = `${pokemonDetails.flavor_text_entries[3].flavor_text}`
 
         pokemonCard.append(pokemonDescription)
-        
-        console.log(pokemonDetails.flavor_text_entries[3].flavor_text)
     }   

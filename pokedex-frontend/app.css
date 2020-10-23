@@ -22,7 +22,6 @@ body {
 /* PAGE TITLE */
 h1 {
     font-family: 'Grandstander', cursive;
-    /* font-family: 'Roboto', sans-serif; */
     text-align: center;
     font-size: 70px;
 }
@@ -54,8 +53,6 @@ a:hover {
 }
 
 #pokedex {
-    /* margin: 20px;
-    padding: 20px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
