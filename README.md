@@ -1,7 +1,7 @@
 <h1>Mod2 Project | Flatiron School</h1>
 <h2><img src="https://i.ibb.co/K51S358/pokepointer.png" alt="Pokedex Image">Pokedex</h2>
 <p>
-Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the PokeAPI, we created a Pokedex with the first Generation (Kanto) Pokemon.<br>
+Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the PokeAPI, we created a Pokedex with the first Generation (Kanto) Pokemon. Our intention with this project was to work with a larger, more complex API and expand our knowledge on styling with CSS.<br>
 <br>“It’s more important to master the cards you’re holding than to complain about the ones your opponent was dealt.” – Grimsley :zap:</br>
 </p>
 
@@ -75,6 +75,7 @@ Flip Pokemon Card Feature:
 Individual Pokemon Page:
 <img src="https://media.giphy.com/media/y6O2dCx4ofbxTn8ahw/giphy.gif" alt="Individual Pokemon Page"><br><br>
 Filter Pokemon by Type:
+<p>Each Pokemon card is color coded according to its Pokemon Type!</p>
 <img src="https://media.giphy.com/media/0VQf1Qse9JBc5YN1Av/giphy.gif" alt="Filter by Type Feature"><br><br>
 Filter Pokemon by Name:
 <img src="https://media.giphy.com/media/ZjrEc4wtpYK6uc7gfn/giphy.gif" alt="Filter by Name Feature"><br><br>
