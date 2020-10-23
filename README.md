@@ -5,10 +5,6 @@ Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the P
 <br>“It’s more important to master the cards you’re holding than to complain about the ones your opponent was dealt.” – Grimsley :zap:</br>
 </p>
 
-<h2>Inspiration</h2>
-
-<p>Some text will go here</p>
-
 <h2>Technologies</h2>
 
 <ul>
