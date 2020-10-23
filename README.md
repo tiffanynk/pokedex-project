@@ -85,34 +85,38 @@ function displayDetails(pokemonDetails) {
 <h2>App Preview</h2>
 Flip Pokemon Card Feature:
 <img src="https://media.giphy.com/media/xuiGJFyU6dZWnoSYRb/giphy.gif" alt="Flip Pokemon Card" border="0"><br><br>
+Individual Pokemon Page:
+<img src="https://media.giphy.com/media/y6O2dCx4ofbxTn8ahw/giphy.gif" alt="Individual Pokemon Page"><br><br>
 Filter Pokemon by Type:
-<img src="https://i.ibb.co/QksvhH4/Screen-Shot-2020-10-02-at-10-52-47-AM.png" alt="Log in screen"><br><br>
+<img src="https://media.giphy.com/media/0VQf1Qse9JBc5YN1Av/giphy.gif" alt="Filter by Type Feature"><br><br>
 Filter Pokemon by Name:
-<img src="https://i.ibb.co/QksvhH4/Screen-Shot-2020-10-02-at-10-52-47-AM.png" alt="Log in screen"><br><br>
+<img src="https://media.giphy.com/media/ZjrEc4wtpYK6uc7gfn/giphy.gif" alt="Filter by Name Feature"><br><br>
 <h2>User Stories</h2>
 
 <h3>As a user, you will be able to:</h3>
 
 <ol>
-<li>Join the Studio Ghibli community.</li>
-<li>See a curated list of the top 10 film suggestions based on Rotten Tomatoes scores.</li>
-<li>Explore the Studio Ghibli film catalogue.</li>
-<li>See and add films to a list of your favorites.</li>
+ <li>See a list of all first generation Pokemon names and pictures.</li>
+ <li>see the list of Pokemon name and picture as a Pokemon card.</li>
+ <li>Click on a Pokemon and see a page of its information.</li>
+ <li>Search for a Pokemon using its name</li>
+ <li>See more information about a pokemon in the back of the card.</li>
 </ol>
 
 <h2>Status</h2>
 
-<p>We set out to match users based on favorite films. We would’ve liked to create an app that delivered on that.</p>
+<p>We set out create a functional and aesthetically pleasing Pokedex.</p>
 
-With time, we would've liked to refactor our code and add features such as:
-<li>Updating Favorites</li>
-<li>Removing Favorites</li>
-<li>Match with a Friend</li>
-<li>Once a user signs up, returning that user to log in screen.</li>
+With time, we would like to refactor our code and add features such as:
+<li>Adding Favorites</li>
+<li>Creating User Log ins</li>
+<li>Add Pokemon Ability descriptions.</li>
+<li>Update Pokemon photos.</li>
+<li>Add a button to navigate back to the top of the page.</li>
 
 <h2>Contact</h2>
 <a href="https://www.linkedin.com/in/tiffany-kanjanabout/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Tiffany Kanjanabout" style="width:10px;height:10px;"></a>Tiffany Kanjanabout :octocat:<br>
-<a href="https://www.linkedin.com/in/jonathannoriega/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Jon Noriega" style="width:10px;height:10px;"></a>Jon Noriega :ocean:<br>
+<a href="https://www.linkedin.com/in/paigeamiles/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Paige Miles" style="width:10px;height:10px;"></a>Paige Miles<br>
 
 <h2>API Reference</h2>
-[Studio Ghibli API](https://ghibliapi.herokuapp.com/)
+[PokeAPI](https://pokeapi.co/)
