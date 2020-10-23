@@ -38,7 +38,7 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             pokemonPhoto.classList.add('poke-image')
             
             const pokemonType = document.createElement('p');
-            pokemonType.textContent = `Type: ${pokemon.types[0].type.name}`
+            pokemonType.textContent = `${pokemon.types[0].type.name.toUpperCase()}`
             pokemonType.classList.add("pokemon-type")
             
             const pokemonAbility = document.createElement('p');
