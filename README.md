@@ -14,10 +14,6 @@ Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the P
 
 <p>Some text will go here</p>
 
-<h2>Intro Video</h2>
-
-[Youtube](LINK GOES HERE)
-
 <h2>Technologies</h2>
 
 <ul>
