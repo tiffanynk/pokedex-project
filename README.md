@@ -102,6 +102,12 @@ With time, we would like to refactor our code and add features such as:
 <li>Update Pokemon photos.</li>
 <li>Add a button to navigate back to the top of the page.</li>
 
+<h2>Challenges</h2>
+<li>How to handle the pokémon data (store it in db, FE only, some combination)</li>
+<li>Limiting the struggle cycle! Looking over each other's code when we were stuck proved to be incredibly helpful.</li>
+<li>How to access information from different endpoints of the API.</li>
+<li>How to remove duplicates and recreate Pokémon cards after the Name search</li>
+
 <h2>Contact</h2>
 <a href="https://www.linkedin.com/in/tiffany-kanjanabout/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Tiffany Kanjanabout" style="width:10px;height:10px;"></a>Tiffany Kanjanabout :octocat:<br>
 <a href="https://www.linkedin.com/in/paigeamiles/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Paige Miles" style="width:10px;height:10px;"></a>Paige Miles :evergreen_tree:<br>
