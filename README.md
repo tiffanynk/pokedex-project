@@ -72,14 +72,13 @@ const fetchPokemon = () => {
 Creating elements for Pokemon descriptions after making a request to the PokeAPI:
 ``` javascript 
 function displayDetails(pokemonDetails) {
-  const pokemonCard = document.querySelector(".large-pokemon-card")
-  console.log(pokemonCard)
-  const pokemonDescription = document.createElement('p');
-  pokemonDescription.classList.add("description")
-  pokemonDescription.textContent = `${pokemonDetails.flavor_text_entries[3].flavor_text}`
+        const findDetailsContainer = document.querySelector(".details-container")
+        const pokemonDescription = document.createElement('p');
+        pokemonDescription.classList.add("description")
+        pokemonDescription.textContent = `${pokemonDetails.flavor_text_entries[3].flavor_text}`
 
-  pokemonCard.append(pokemonDescription)
-}   
+        findDetailsContainer.append(pokemonDescription)
+    }
 ```
 
 
