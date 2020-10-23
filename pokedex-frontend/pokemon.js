@@ -58,7 +58,6 @@ fetch(`${pokemonURL}/${pokemon_id}`)
 
     function displayDetails(pokemonDetails) {
         const findDetailsContainer = document.querySelector(".details-container")
-        console.log(findDetailsContainer)
         const pokemonDescription = document.createElement('p');
         pokemonDescription.classList.add("description")
         pokemonDescription.textContent = `${pokemonDetails.flavor_text_entries[3].flavor_text}`
