@@ -28,9 +28,46 @@ h1 {
     text-align: center;
 }
 
+input[type=text] {
+    padding: 0;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .15);
+    background-color: white;
+    font-size: 16px;
+  }
+
+.pokemonSearchBox {
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+}
+
 /*TYPE FILTER*/
 #pokemon-type-filter {
     text-align: center;
+}
+
+select {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type=submit] {
+    background-color: rgba(143, 143, 143, 0.445);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgba(143, 143, 143, 0.445);
+    padding: 5px;
+    border-radius: 5px;   
 }
 
 a {
