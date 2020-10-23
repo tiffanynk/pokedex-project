@@ -1,6 +1,6 @@
 const pokeDiv = document.querySelector('#poke-info')
-
-const findPokemonDescription = document.querySelector(".description")
+const findDetailsContainer = document.querySelector(".details-container")
+// const findPokemonDescription = document.querySelector(".description")
 
 const pokemonSpeciesUrl = "https://pokeapi.co/api/v2/pokemon-species"
 const pokemonURL = 'https://pokeapi.co/api/v2/pokemon'
@@ -25,6 +25,11 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             largePokemonCard.classList.add("large-pokemon-card")
             largePokemonCard.id = `${pokemon.types[0].type.name}`
 
+            // container for pokemon details
+            const detailsContainer = document.createElement("div")
+            detailsContainer.classList.add("details-container")
+
+
             const pokemonId = document.createElement("p")
             pokemonId.textContent = `#${pokemon.id}`
             pokemonId.classList.add("pokemon-id")
@@ -36,7 +41,8 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             const pokemonPhoto = document.createElement('img');
             pokemonPhoto.src = `${pokemon.sprites.front_default}`
             pokemonPhoto.classList.add('poke-image')
-            
+
+
             const pokemonType = document.createElement('p');
             pokemonType.textContent = `${pokemon.types[0].type.name.toUpperCase()}`
             pokemonType.classList.add("pokemon-type")
@@ -46,15 +52,16 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             pokemonAbility.classList.add("pokemon-abilities")
 
             pokeDiv.append(largePokemonCard)
-            largePokemonCard.append(pokemonId, pokemonName, pokemonPhoto, pokemonType, pokemonAbility);
-            }
+            detailsContainer.append(pokemonId, pokemonName, pokemonPhoto, pokemonType, pokemonAbility)
+            largePokemonCard.append(detailsContainer);
+        }
 
     function displayDetails(pokemonDetails) {
-        const pokemonCard = document.querySelector(".large-pokemon-card")
-        console.log(pokemonCard)
+        const findDetailsContainer = document.querySelector(".details-container")
+        console.log(findDetailsContainer)
         const pokemonDescription = document.createElement('p');
         pokemonDescription.classList.add("description")
         pokemonDescription.textContent = `${pokemonDetails.flavor_text_entries[3].flavor_text}`
 
-        pokemonCard.append(pokemonDescription)
+        findDetailsContainer.append(pokemonDescription)
     }   
