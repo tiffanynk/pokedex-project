@@ -83,7 +83,7 @@ function displayDetails(pokemonDetails) {
 
 <h2>App Preview</h2>
 Flip Pokemon Card Feature:
-<img src="https://giphy.com/gifs/xuiGJFyU6dZWnoSYRb/html5" alt="Flip Pokemon Card" border="0"><br><br>
+<img src="https://media.giphy.com/media/xuiGJFyU6dZWnoSYRb/giphy.gif" alt="Flip Pokemon Card" border="0"><br><br>
 Filter Pokemon by Type:
 <img src="https://i.ibb.co/QksvhH4/Screen-Shot-2020-10-02-at-10-52-47-AM.png" alt="Log in screen"><br><br>
 Filter Pokemon by Name:
