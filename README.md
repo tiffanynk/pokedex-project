@@ -40,6 +40,8 @@ To navigate back to the homepage after being directed to an individual Pokemon p
 
 <h2>Code Examples</h2>
 Our initial fetch call for the main page:
+
+
 ```javascript
 const fetchPokemon = () => {
     const promises = [];
