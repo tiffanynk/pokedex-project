@@ -128,7 +128,7 @@ function createPokemonCard(pokemon) {
     backPokeName.classList.add("back-pokemon-name")
 
     const backPokeAbilities = document.createElement("p")
-    backPokeAbilities.textContent = `Abilities: ${pokemon.abilities}`
+    backPokeAbilities.innerHTML = `<p>Abilities:<br>${pokemon.abilities}<p>`
     backPokeAbilities.classList.add("back-pokemon-abilities")
 
     backCard.append(backImage, backPokeID, backPokeName, backPokeAbilities)
