@@ -1,6 +1,5 @@
 const pokeDiv = document.querySelector('#poke-info')
 
-
 const findPokemonDescription = document.querySelector(".description")
 
 const pokemonSpeciesUrl = "https://pokeapi.co/api/v2/pokemon-species"
@@ -27,7 +26,7 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             largePokemonCard.id = `${pokemon.types[0].type.name}`
 
             const pokemonId = document.createElement("p")
-            pokemonId.textContent = `${pokemon.id}`
+            pokemonId.textContent = `#${pokemon.id}`
             pokemonId.classList.add("pokemon-id")
 
             const pokemonName = document.createElement('h1');
@@ -39,7 +38,7 @@ fetch(`${pokemonURL}/${pokemon_id}`)
             pokemonPhoto.classList.add('poke-image')
             
             const pokemonType = document.createElement('p');
-            pokemonType.textContent = `Type: ${pokemon.types[0].type.name}`
+            pokemonType.textContent = `${pokemon.types[0].type.name.toUpperCase()}`
             pokemonType.classList.add("pokemon-type")
             
             const pokemonAbility = document.createElement('p');

@@ -61,22 +61,6 @@ function createPokemonCards(pokemons) {
     })
 }
 
-<<<<<<< HEAD
-=======
-// const fetchDescription = (pokemon) => {
-//     (fetch(pokemon.description))
-//         .then(response => response.json())
-//         .then(renderDescription)
-// }
-
-// function renderDescription(speciesInfo) {
-//     speciesInfo.flavor_text_entries[3].flavor_text
-// }
-// function setTypes() {
-
-// }
-
->>>>>>> 5f8264e790cfe4f9cd402b0045c4a955d1f8b854
 function createPokemonCard(pokemon) {
     // total card
     const flipCard = document.createElement("div")
@@ -141,9 +125,6 @@ function createPokemonCard(pokemon) {
 
     uniqueTypes.add(pokemon.type)
 }
-<<<<<<< HEAD
-=======
-
 function generateTypes() {
     uniqueTypes.forEach(type => {
         const typeOption = document.createElement('option');
@@ -153,24 +134,3 @@ function generateTypes() {
         pokemonTypeFilter.append(typeOption)
     })
 }
-
-// const pokeQueryParams = new URLSearchParams(window.location.search)
-// const pokemon_id = pokeQueryParams.get("pokemon_id")
-
-// for (let i = 1; i <= 151; i++) {
-//     const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${i}`;
-//     fetch(pokemonSpeciesUrl)
-//         .then(response => response.json())
-//         .then(pokemonDetails => {
-//             displayDetails(pokemonDetails)
-//         })
-//     }
-
-
-// function displayDetails(allPokemonDetails) {
-     
-//     allPokemonDetails.map(detail => {
-//          pokeDescription: detail.flavor_text_entries[3].flavor_text
-//     })
-
->>>>>>> 5f8264e790cfe4f9cd402b0045c4a955d1f8b854
