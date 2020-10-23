@@ -1,6 +1,5 @@
 const pokeDiv = document.querySelector('#poke-info')
 
-
 const findPokemonDescription = document.querySelector(".description")
 
 const pokemonSpeciesUrl = "https://pokeapi.co/api/v2/pokemon-species"
