@@ -41,9 +41,17 @@ a:hover {
     color:black;
 }
 
+.form-spacers{
+    height: 25px;
+}
+
+.type-filter{
+    margin: 10px;;
+}
+
 #pokedex {
-    margin: 20px;
-    padding: 20px;
+    /* margin: 20px;
+    padding: 20px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -51,7 +59,7 @@ a:hover {
 
 /* flip card container  */
 .flip-card {
-    margin: 40px;
+    margin: 35px;
     width: 200px;
     height: 275px;
     text-align: center;
