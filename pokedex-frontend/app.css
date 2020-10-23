@@ -24,6 +24,8 @@ h1 {
     font-family: 'Grandstander', cursive;
     text-align: center;
     font-size: 70px;
+    margin-top: 45px;
+    margin-bottom: 20px;
 }
 
 /* SEARCH BAR*/
@@ -127,8 +129,9 @@ a:hover {
     background-color: white;
     border-radius: 10px;
     position: relative;
-    left: 75px;
-    bottom: -20px;
+    /* left: 75px; */
+    margin: auto;
+    bottom: -12.5px;
     font-size: small;
 }
 
