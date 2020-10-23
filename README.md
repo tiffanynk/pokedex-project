@@ -70,14 +70,14 @@ function displayDetails(pokemonDetails) {
 
 
 <h2>App Preview</h2>
-Flip Pokemon Card Feature:
+<b>Flip Pokemon Card Feature:</b>
 <img src="https://media.giphy.com/media/xuiGJFyU6dZWnoSYRb/giphy.gif" alt="Flip Pokemon Card" border="0"><br><br>
-Individual Pokemon Page:
+<b>Individual Pokemon Page:</b>
 <img src="https://media.giphy.com/media/y6O2dCx4ofbxTn8ahw/giphy.gif" alt="Individual Pokemon Page"><br><br>
-Filter Pokemon by Type:
+<b>Filter Pokemon by Type:</b><br>
 <p>Each Pokemon card is color coded according to its Pokemon Type!</p>
 <img src="https://media.giphy.com/media/0VQf1Qse9JBc5YN1Av/giphy.gif" alt="Filter by Type Feature"><br><br>
-Filter Pokemon by Name:
+<b>Filter Pokemon by Name:</b>
 <img src="https://media.giphy.com/media/ZjrEc4wtpYK6uc7gfn/giphy.gif" alt="Filter by Name Feature"><br><br>
 <h2>User Stories</h2>
 
