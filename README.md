@@ -1,5 +1,6 @@
 <h1>Mod2 Project | Flatiron School</h1>
-<h2><img src="https://i.ibb.co/K51S358/pokepointer.png" alt="Pokedex Image">Pokedex</h2>
+
+<h2><img src="https://i.ibb.co/TBWb6FL/Storytelling.png" alt="Storytelling" border="0">Student Resources</h2>
 <p>
 Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the PokeAPI, we created a Pokedex with the first Generation (Kanto) Pokemon. Our intention with this project was to work with a larger, more complex API and expand our knowledge on styling with CSS.<br>
 <br>“It’s more important to master the cards you’re holding than to complain about the ones your opponent was dealt.” – Grimsley :zap:</br>
@@ -114,3 +115,4 @@ With time, we would like to refactor our code and add features such as:
 
 <h2>API Reference</h2>
 [PokeAPI](https://pokeapi.co/)
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
