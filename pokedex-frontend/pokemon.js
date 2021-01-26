@@ -9,14 +9,14 @@ const pokemon_id = pokeQueryParams.get("pokemon_id")
 
 function fetchSpecies() {
     fetch(`${pokemonSpeciesUrl}/${pokemon_id}`)
-    .then(response => response.json())
-    .then(displayDetails)
+        .then(response => response.json())
+        .then(displayDetails)
 }
 
 fetch(`${pokemonURL}/${pokemon_id}`)
-.then(response => response.json())
-.then(displayPokemon)
-.then(fetchSpecies)
+    .then(response => response.json())
+    .then(displayPokemon)
+    .then(fetchSpecies)
 
 
 
